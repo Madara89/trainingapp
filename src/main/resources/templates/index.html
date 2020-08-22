@@ -9,15 +9,20 @@
     <h2>Choose your coding training and register</h2>
     <form th:action ="@{/home}">
         <ol>
-            <li>HTML & CSS <button> <a type="button" th:href="@{/apply}">Register</a></button></li>
+            <li><a type="button" th:href="@{/htmlcss}">HTML & CSS</a>
+                <button> <a type="button" th:href="@{/apply}">Register</a></button></li>
             <br>
-            <li>JavaScript <button for="register">Register</button></li>
+            <li><a type="button" th:href="@{/javascript}">JavaScript</a>
+                <button for="register">Register</button></li>
             <br>
-            <li>Java <button for="register">Register</button></li>
+            <li><a type="button" th:href="@{/java}">Java</a>
+                <button for="register">Register</button></li>
             <br>
-            <li>C# <button for="register">Register</button></li>
+            <li><a type="button" th:href="@{/csharp}">C#</a>
+                <button for="register">Register</button></li>
             <br>
-            <li>PHP <button for="register">Register</button></li>
+            <li><a type="button" th:href="@{/php}">PHP</a>
+                <button for="register">Register</button></li>
         </ol>
     </form>
 </body>
