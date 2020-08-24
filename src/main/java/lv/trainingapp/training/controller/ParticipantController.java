@@ -22,8 +22,8 @@ public class ParticipantController {
 
 
     @GetMapping("/applyhtml") //end-point for each training class
-    public String addParticipant1() {
-        //model.addAttribute("participant", new ParticipantModel());
+    public String addParticipant1(Model model) {
+        model.addAttribute("studenthtml", new Student());
         return "htmlreg"; //html page
     }
 
@@ -31,6 +31,7 @@ public class ParticipantController {
     public String addStudentHtmlCourse(@ModelAttribute Student student, Model model) {
         model.addAttribute("studenthtml", student);
         htmlCourse.add(student);
+        System.out.println(htmlCourse);
         return "index";
     }
 }
