@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class ParticipantModel {
 
-    private @Id @GeneratedValue Long id;
+    private @Id @GeneratedValue int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -24,12 +24,12 @@ public class ParticipantModel {
     }
     //getters and setters:
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(int id) {
+        this.id = id++;
     }
 
     public String getFirstName() {

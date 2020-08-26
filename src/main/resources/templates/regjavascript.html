@@ -6,7 +6,7 @@
 </head>
 <h1>Please fill in the registration form!</h1>
 <body>
-<form action= "#" th:action="@{/apply}" th:object="${participant}" method="post">
+<form action= "#" th:action="@{/addstudentjavascript}" th:object="${javascript}" method="post">
     <label for="firstName">First Name</label>
     <br>
     <input type="text" id="firstName" th:field="*{firstName}" placeholder="Your name..">
@@ -22,11 +22,10 @@
     <input type="text" id="email" th:field="*{email}" placeholder="Your e-mail..">
     <br>
     <br>
-    <button for="apply">Apply</button>
+    <input type="submit" value="Apply"/>
     <br>
     <br>
-    <button> <a type="button" th:href="@{/home}">Return to Home page</a></button>
-    <button type="button" th:href="@{/home}">Return to Home page</button>
+    <a th:href="@{/home}"><button>Return to Home page</button></a>
 </form>
 </body>
 </html>
