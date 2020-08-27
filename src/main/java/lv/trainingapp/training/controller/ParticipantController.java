@@ -34,12 +34,13 @@ public class ParticipantController {
         //System.out.println(htmlCourse);
         getStudentCount(htmlCourse);
 
-        if(htmlCourse.size() < 3){
-            System.out.println("You have registered for class!");
-        }else{
-            System.out.println("No more free places available for this class.");
-        }
 
+        if ((htmlCourse.size() + 1) < 3) {
+            System.out.println("You have registered for class!");
+        } else {
+            System.out.println("No more free places available for this class.");
+            htmlCourse.remove(participantModel); // counter stops
+        }
         return "index";
     }
 
