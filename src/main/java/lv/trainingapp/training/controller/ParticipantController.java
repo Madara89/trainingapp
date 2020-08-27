@@ -14,18 +14,18 @@ import java.util.List;
 @Controller
 public class ParticipantController {
 
-//list
+    //list of registered participants:
 
     List<ParticipantModel> htmlCourse = new ArrayList<>();
 
 
-    //html
+    //html register:
     @GetMapping("/applyhtml") //end-point for each training class
     public String addParticipant1(Model model) {
         model.addAttribute("html", new ParticipantModel());
         return "reghtml"; //html page
     }
-    //puch button Apply:
+    //after press button Apply:
     @PostMapping("/addstudenthtml")
     public String addStudentHtmlCourse(@ModelAttribute ParticipantModel participantModel, Model model) {
         //int idCount = 0; //test
@@ -35,13 +35,14 @@ public class ParticipantController {
         getStudentCount(htmlCourse);
 
 
-        if ((htmlCourse.size() + 1) < 3) {
-            System.out.println("You have registered for class!");
+        if ((htmlCourse.size() + 1) <= 6) {
+            System.out.println(participantModel.toString());
+            return "regsuccessful";
         } else {
-            System.out.println("No more free places available for this class.");
+            System.out.println("Waiting list: "+ participantModel.toString());
             htmlCourse.remove(participantModel); // counter stops
+            return "regfull";
         }
-        return "index";
     }
 
     //javascript
@@ -103,7 +104,7 @@ public class ParticipantController {
     }
 
     public static void getStudentCount(List<ParticipantModel> listArr){ //how many have applied
-        System.out.println(listArr.size()+ "student count");
+        System.out.println(listArr.size()+ ". participant");
     }
 }
 
