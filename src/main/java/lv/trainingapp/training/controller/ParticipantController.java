@@ -18,6 +18,7 @@ public class ParticipantController {
 
     List<ParticipantModel> htmlCourse = new ArrayList<>();
 
+    // waiting list
 
     //html register:
     @GetMapping("/applyhtml") //end-point for each training class
@@ -30,20 +31,22 @@ public class ParticipantController {
     public String addStudentHtmlCourse(@ModelAttribute ParticipantModel participantModel, Model model) {
         //int idCount = 0; //test
         model.addAttribute("html",participantModel);
-        htmlCourse.add(participantModel);
-        //System.out.println(htmlCourse);
-        getStudentCount(htmlCourse);
+        System.out.println("Getting name" + participantModel.getFirstName());
 
+//        if (participantModel.getFirstName().equals("")){
+//            System.out.println("Please fill in all fields"); // paziņojums
+//        }
 
-        if ((htmlCourse.size() + 1) <= 6) {
+        if ((htmlCourse.size()) < 2) {
+            htmlCourse.add(participantModel);
             System.out.println(participantModel.toString());
             return "regsuccessful";
         } else {
             System.out.println("Waiting list: "+ participantModel.toString());
-            htmlCourse.remove(participantModel); // counter stops
             return "regfull";
         }
     }
+
 
     //javascript
     @GetMapping("/applyjavascript") //end-point for each training class
@@ -103,8 +106,5 @@ public class ParticipantController {
         return "index";
     }
 
-    public static void getStudentCount(List<ParticipantModel> listArr){ //how many have applied
-        System.out.println(listArr.size()+ ". participant");
-    }
 }
 

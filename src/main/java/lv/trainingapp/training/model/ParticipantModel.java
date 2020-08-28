@@ -7,7 +7,7 @@ import javax.persistence.Id;
 @Entity
 public class ParticipantModel {
 
-    private @Id @GeneratedValue int id;
+    private    @Id @GeneratedValue int id;
     private String firstName;
     private String lastName;
     private String email;
