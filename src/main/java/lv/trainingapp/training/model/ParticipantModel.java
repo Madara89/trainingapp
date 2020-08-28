@@ -59,11 +59,6 @@ public class ParticipantModel {
     //toString:
     @Override
     public String toString() {
-        return "ParticipantModel{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "First name = "+firstName+", last name = "+lastName+", e-mail = "+email;
     }
 }
