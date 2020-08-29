@@ -1,9 +1,1 @@
-First name = madara, last name = bigels, e-mail = madis@inbox
-First name = elina, last name = fox, e-mail = madis@inbox
-First name = madara, last name = bigels, e-mail = madis@inbox
-First name = Anna, last name = lapsa, e-mail = @inbox
-First name = janis, last name = lapsa, e-mail = @bigels
-First name = Anna, last name = fox, e-mail = madis@inbox
-First name = janis, last name = lapsa, e-mail = @fox
-First name = janis, last name = bigels, e-mail = @inbox
-First name = elina, last name = bigels, e-mail = madis@inbox
+First name = Madara, last name = Lapsa, e-mail = @inbox
