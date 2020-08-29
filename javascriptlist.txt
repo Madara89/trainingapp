@@ -1,6 +1,1 @@
-First name = janis, last name = bigels, e-mail = madis@inbox
-First name = janis, last name = fox, e-mail = madis@inbox
-First name = janis, last name = fox, e-mail = @fox
-First name = janis, last name = bigels, e-mail = @fox
-First name = elina, last name = bigels, e-mail = madis@inbox
-First name = madara, last name = Roze, e-mail = madis@inbox
+First name = Anna, last name = Roze, e-mail = @inbox

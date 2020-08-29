@@ -1,2 +1,0 @@
-First name = Anna, last name = Liepa, e-mail = @inbox
-First name = juris, last name = liepa, e-mail = @fox
