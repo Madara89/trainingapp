@@ -19,17 +19,6 @@ public class ParticipantController  {
 
     List<ParticipantModel> htmlWaiting = new ArrayList<>();
 
-    //counts booked classes from registration:
-    @GetMapping("/home")
-    public String homePage(Model model) {
-        model.addAttribute("counthtml", "" + htmlCourse.size());
-        model.addAttribute("countjavascript","" + javaScriptCourse.size());
-        model.addAttribute("countjava","" + javaCourse.size());
-        model.addAttribute("countcsharp","" + cSharpCourse.size());
-        model.addAttribute("countphp","" + phpCourse.size());
-        return "index";
-    }
-
     //html class register:
     @GetMapping("/applyhtml") //end-point for each training class
     public String addParticipant1(Model model) {
@@ -41,21 +30,6 @@ public class ParticipantController  {
     public String addStudentHtmlCourse(@ModelAttribute ParticipantModel participantModel, Model model) {
         model.addAttribute("html",participantModel);
 
-        if ((htmlCourse.size()) < 2) { //count from 0
-            htmlCourse.add(participantModel); //pie .add info saglabā course listā
-            try {
-                makeList1(htmlCourse);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            return "regsuccessful";
-        } else {
-            htmlWaiting.add(participantModel); //pie .add info saglabā waiting listā
-            try {
-                waitingList1(htmlWaiting);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
             return "regfull";
         }
     }
@@ -63,7 +37,6 @@ public class ParticipantController  {
     List<ParticipantModel> javaScriptCourse = new ArrayList<>();
     List<ParticipantModel> javaScriptWaiting = new ArrayList<>();
 
-    //javascript class register:
     @GetMapping("/applyjavascript") //end-point for each training class
     public String addParticipant2(Model model) {
         model.addAttribute("javascript", new ParticipantModel());
@@ -189,190 +162,6 @@ public class ParticipantController  {
                 e.printStackTrace();
             }
             return "regfull";
-        }
-    }
-
-    //save participant data to .txt file:
-    public static void makeList1(List<ParticipantModel> htmlCourse) throws FileNotFoundException {
-
-        System.out.println("Participant added to training list");
-        String line = "";
-        for(ParticipantModel participant : htmlCourse){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("htmllist.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void makeList2(List<ParticipantModel> javaScriptCourse) throws FileNotFoundException {
-
-        System.out.println("Participant added to training list");
-        String line = "";
-        for(ParticipantModel participant : javaScriptCourse){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("javascriptlist.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void makeList3(List<ParticipantModel> javaCourse) throws FileNotFoundException {
-
-        System.out.println("Participant added to training list");
-        String line = "";
-        for(ParticipantModel participant : javaCourse){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("javalist.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void makeList4(List<ParticipantModel> cSharpCourse) throws FileNotFoundException {
-
-        System.out.println("Participant added to training list");
-        String line = "";
-        for (ParticipantModel participant : cSharpCourse) {
-            line = participant.toString() + "\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("csharplist.txt", true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void makeList5(List<ParticipantModel> phpCourse) throws FileNotFoundException {
-
-        System.out.println("Participant added to training list");
-        String line = "";
-        for (ParticipantModel participant : phpCourse) {
-            line = participant.toString() + "\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("phplist.txt", true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    //create waiting lists .txt file:
-    public static void waitingList1(List<ParticipantModel> htmlWaiting) throws FileNotFoundException {
-
-        System.out.println("Participant added to waiting list");
-        String line = "";
-        for(ParticipantModel participant : htmlWaiting){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("htmlwaiting.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void waitingList2(List<ParticipantModel> javaScriptWaiting) throws FileNotFoundException {
-
-        System.out.println("Participant added to waiting list");
-        String line = "";
-        for(ParticipantModel participant : javaScriptWaiting){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("javascriptwaiting.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void waitingList3(List<ParticipantModel> javaWaiting) throws FileNotFoundException {
-
-        System.out.println("Participant added to waiting list");
-        String line = "";
-        for(ParticipantModel participant : javaWaiting){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("javawaiting.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void waitingList4(List<ParticipantModel> cSharpWaiting) throws FileNotFoundException {
-
-        System.out.println("Participant added to waiting list");
-        String line = "";
-        for(ParticipantModel participant : cSharpWaiting){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("csharpwaiting.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    public static void waitingList5(List<ParticipantModel> phpWaiting) throws FileNotFoundException {
-
-        System.out.println("Participant added to waiting list");
-        String line = "";
-        for(ParticipantModel participant : phpWaiting){
-            line = participant.toString()+"\n";
-        }
-        try {
-            FileOutputStream list = new FileOutputStream("phpwaiting.txt",true);
-            String inputData = line;
-            byte[] byteArray = inputData.getBytes();
-            list.write(byteArray);
-            list.flush();
-            list.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
