@@ -18,7 +18,14 @@ public class ParticipantController {
 
     List<ParticipantModel> htmlCourse = new ArrayList<>();
 
-    // waiting list
+    List<ParticipantModel> htmlWaiting = new ArrayList<>();
+
+
+    @GetMapping("/home")
+    public String homePage(Model model) {
+        model.addAttribute("counthtml", "" + htmlCourse.size());
+        return "index";
+    }
 
     //html register:
     @GetMapping("/applyhtml") //end-point for each training class
@@ -42,6 +49,7 @@ public class ParticipantController {
             System.out.println(participantModel.toString());
             return "regsuccessful";
         } else {
+            htmlWaiting.add(participantModel);
             System.out.println("Waiting list: "+ participantModel.toString());
             return "regfull";
         }

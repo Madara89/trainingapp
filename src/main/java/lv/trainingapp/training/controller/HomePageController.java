@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomePageController {
 
-    @GetMapping("/home")
-    public String homePage(Model model) {
-        return "index";
-    }
+//    @GetMapping("/home")
+//    public String homePage(Model model) {
+//        return "index";
+//    }
 
 }
 
