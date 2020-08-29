@@ -16,6 +16,7 @@ public class ParticipantController  {
 
     //HTML & CSS training:
     List<ParticipantModel> htmlCourse = new ArrayList<>();
+
     List<ParticipantModel> htmlWaiting = new ArrayList<>();
 
     //counts booked classes from registration:
