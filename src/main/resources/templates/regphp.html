@@ -9,17 +9,17 @@
 <form action= "#" th:action="@{/addstudentphp}" th:object="${php}" method="post">
     <label for="firstName">First Name</label>
     <br>
-    <input type="text" id="firstName" th:field="*{firstName}" placeholder="Your name..">
+    <input type="text" id="firstName" th:field="*{firstName}" placeholder="Your name.." required>
     <br>
     <br>
     <label for="lastName">Last Name</label>
     <br>
-    <input type="text" id="lastName" th:field="*{lastName}" placeholder="Your last name..">
+    <input type="text" id="lastName" th:field="*{lastName}" placeholder="Your last name.." required>
     <br>
     <br>
     <label for="email">E-mail</label>
     <br>
-    <input type="text" id="email" th:field="*{email}" placeholder="Your e-mail..">
+    <input type="text" id="email" th:field="*{email}" placeholder="Your e-mail.." required>
     <br>
     <br>
     <input type="submit" value="Apply"/>
