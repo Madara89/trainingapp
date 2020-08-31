@@ -19,7 +19,7 @@ public class ParticipantController {
     List<ParticipantModel> htmlWaiting = new ArrayList<>();
 
     //counts booked classes from registration:
-    @GetMapping("/home")
+    @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("counthtml", "" + htmlCourse.size());
         model.addAttribute("countjavascript", "" + javaScriptCourse.size());
