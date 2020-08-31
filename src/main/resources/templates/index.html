@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/index.css}">
 </head>
 <body>
     <div class="wrap">
 <h2>Select training class</h2>
-    <p><text th:text="${counthtml}"></text>
+    <p><div th:if="${counthtml == 0}" >
+        0
+    </div>
+        <div th:unless="${counthtml > 0}" th:text="${counthtml}">
+        </div>
+
         <text>/5</text>
         <a th:href="@{/htmlcss}">HTML & CSS</a>
         <a th:href="@{/applyhtml}">
