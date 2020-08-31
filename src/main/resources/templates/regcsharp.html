@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Class register</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/register.css}">
 </head>
 <body>
     <div class="wrap">
@@ -14,7 +14,7 @@
     <input type="text" id="email" th:field="*{email}" placeholder="e-mail.." required>
     <input type="submit" value="Apply"/>
 </form>
-    <a th:href="@{/home}">
+    <a th:href="@{/}">
         <button>Back to Home page</button>
     </a>
     </div>

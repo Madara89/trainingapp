@@ -8,37 +8,36 @@
 <body>
     <div class="wrap">
 <h2>Select training class</h2>
-    <p>
-        <!--<div th:if="${counthtml == 0}" >
-        0
-    </div>-->
-        <div th:text="${counthtml}">
+    <p><div th:text="${counthtml}">
         </div>
-
         <text>/5</text>
         <a th:href="@{/htmlcss}">HTML & CSS</a>
         <a th:href="@{/applyhtml}">
         <button>Register</button>
         </a></p>
-    <p><text th:text="${countjavascript}"></text>
+    <p><div th:text="${countjavascript}">
+        </div>
         <text>/5</text>
         <a th:href="@{/javascript}">JavaScript</a>
         <a th:href="@{/applyjavascript}">
         <button>Register</button>
         </a></p>
-    <p><text th:text="${countjava}"></text>
+    <p><div th:text="${countjava}">
+        </div>
         <text>/5</text>
         <a th:href="@{/java}">Java</a>
         <a th:href="@{/applyjava}">
         <button>Register</button>
         </a></p>
-    <p><text th:text="${countcsharp}"></text>
+    <p><div th:text="${countcsharp}">
+        </div>
         <text>/5</text>
         <a th:href="@{/csharp}">C#</a>
         <a th:href="@{/applycsharp}">
         <button>Register</button>
         </a></p>
-    <p><text th:text="${countphp}"></text>
+    <p><div th:text="${countphp}">
+        </div>
         <text>/5</text>
         <a th:href="@{/php}">PHP</a>
         <a th:href="@{/applyphp}">
