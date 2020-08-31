@@ -1,1 +1,0 @@
-First name = janis, last name = liepa, e-mail = @bigels

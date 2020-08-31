@@ -7,15 +7,18 @@ import javax.persistence.Id;
 @Entity
 public class ParticipantModel {
 
-    private    @Id @GeneratedValue int id;
+    private @Id
+    @GeneratedValue
+    int id;
     private String firstName;
     private String lastName;
     private String email;
 
     //constructor:
-    public ParticipantModel(){
+    public ParticipantModel() {
 
     }
+
     //full constructor:
     public ParticipantModel(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -59,6 +62,6 @@ public class ParticipantModel {
     //toString:
     @Override
     public String toString() {
-        return "First name = "+firstName+", last name = "+lastName+", e-mail = "+email;
+        return "First name = " + firstName + ", last name = " + lastName + ", e-mail = " + email;
     }
 }
