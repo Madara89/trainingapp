@@ -6,7 +6,7 @@
 </head>
 <h1>Please fill in the registration form!</h1>
 <body>
-<form action= "#" th:action="@{/addstudentphp}" th:object="${php}" method="post">
+<form action="#" th:action="@{/addstudentphp}" th:object="${php}" method="post">
     <label for="firstName">First Name</label>
     <br>
     <input type="text" id="firstName" th:field="*{firstName}" placeholder="Your name.." required>
@@ -25,7 +25,9 @@
     <input type="submit" value="Apply"/>
     <br>
     <br>
-    <a th:href="@{/home}"><button>Return to Home page</button></a>
 </form>
+    <a th:href="@{/home}">
+        <button>Back to Home page</button>
+    </a>
 </body>
 </html>

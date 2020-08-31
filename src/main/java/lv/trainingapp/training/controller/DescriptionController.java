@@ -12,23 +12,26 @@ public class DescriptionController {
     public String homePage1(Model model) {
         return "infocsharp";
     }
+
     @GetMapping("/htmlcss")
     public String homePage2(Model model) {
         return "infohtmlcss";
     }
+
     @GetMapping("/java")
     public String homePage3(Model model) {
         return "infojava";
     }
+
     @GetMapping("/javascript")
     public String homePage4(Model model) {
         return "infojavascript";
     }
+
     @GetMapping("/php")
     public String homePage5(Model model) {
         return "infophp";
     }
-
 
 
 }
