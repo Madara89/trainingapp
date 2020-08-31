@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Welcome to trainings!</h1>
-    <h2>Choose your coding training and register</h2>
-        <ol>
-            <li><a th:href="@{/htmlcss}">HTML & CSS</a><p th:text="${counthtml}"></p> <p>/5</p>
-                <a th:href="@{/applyhtml}"><button>Register</button></a></li>
-                <br>
-            <li><a th:href="@{/javascript}">JavaScript</a><p th:text="${countjavascript}"></p> <p>/5</p>
-                <a th:href="@{/applyjavascript}"><button>Register</button></a></li>
-                <br>
-            <li><a th:href="@{/java}">Java</a><p th:text="${countjava}"></p><p>/5</p>
-                <a th:href="@{/applyjava}"><button>Register</button></a></li>
-                <br>
-            <li><a th:href="@{/csharp}">C#</a><p th:text="${countcsharp}"></p><p>/5</p>
-                    <a th:href="@{/applycsharp}"><button>Register</button></a></li>
-                <br>
-            <li><a th:href="@{/php}">PHP</a><p th:text="${countphp}"></p><p>/5</p>
-                 <a th:href="@{/applyphp}"><button>Register</button></a></li>
-        </ol>
+    <div class="wrap">
+<h2>Select training class</h2>
+    <p><text th:text="${counthtml}"></text>
+        <text>/5</text>
+        <a th:href="@{/htmlcss}">HTML & CSS</a>
+        <a th:href="@{/applyhtml}">
+        <button>Register</button>
+        </a></p>
+    <p><text th:text="${countjavascript}"></text>
+        <text>/5</text>
+        <a th:href="@{/javascript}">JavaScript</a>
+        <a th:href="@{/applyjavascript}">
+        <button>Register</button>
+        </a></p>
+    <p><text th:text="${countjava}"></text>
+        <text>/5</text>
+        <a th:href="@{/java}">Java</a>
+        <a th:href="@{/applyjava}">
+        <button>Register</button>
+        </a></p>
+    <p><text th:text="${countcsharp}"></text>
+        <text>/5</text>
+        <a th:href="@{/csharp}">C#</a>
+        <a th:href="@{/applycsharp}">
+        <button>Register</button>
+        </a></p>
+    <p><text th:text="${countphp}"></text>
+        <text>/5</text>
+        <a th:href="@{/php}">PHP</a>
+        <a th:href="@{/applyphp}">
+        <button>Register</button>
+        </a></p>
+</div>
 </body>
 </html>
