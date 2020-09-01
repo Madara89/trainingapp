@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>What is PHP</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/info.css}">
 </head>
 <body>
-<div>
+<div class="left">
     <h1>Information about PHP</h1>
     <p>
         PHP is a general-purpose scripting language
@@ -13,10 +14,17 @@
         Learn the fundamentals of PHP, one of the most popular languages of modern web development!
     </p>
 </div>
+
+<div class="right">
+    <div class="buttonregister">
 <a th:href="@{/applyphp}">
     <button>Register</button></a>
+    </div>
+    <div class="buttonback">
 <a th:href="@{/}">
     <button>Back</button>
 </a>
+    </div>
+</div>
 </body>
 </html>
