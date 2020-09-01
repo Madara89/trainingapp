@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>What is HTML & CSS</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/info.css}">
 </head>
-<div>
+<div class="left">
     <h1>Information about HTML & CSS</h1>
     <p>
         HTML is the foundation of all web pages.
@@ -14,11 +15,16 @@
         Learn both and start creating amazing websites!
     </p>
 </div>
-
+<div class="right">
+    <div class="buttonregister">
 <a th:href="@{/applyhtml}">
     <button>Register</button></a>
+    </div>
+    <div class="buttonback">
 <a th:href="@{/}">
     <button>Back</button>
 </a>
+    </div>
+</div>
 </body>
 </html>
