@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>What is C#</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/info.css}">
 </head>
 <body>
-<div>
+<div class="left">
     <h1>Information about C#</h1>
     <p>
         C# is one of the most popular programming languages.
@@ -14,10 +15,16 @@
         Learn C#, a programming language used for websites, apps, video games, and virtual reality!
     </p>
 </div>
+<div class="right">
+    <div class="buttonregister">
 <a th:href="@{/applycsharp}">
     <button>Register</button></a>
+    </div>
+<div class="buttonback">
 <a th:href="@{/}">
     <button>Back</button>
 </a>
+    </div>
+</div>
 </body>
 </html>
